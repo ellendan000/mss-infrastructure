@@ -1,0 +1,10 @@
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8181/eureka
+    fetch-registry: false
+    register-with-eureka: true

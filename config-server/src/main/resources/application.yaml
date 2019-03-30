@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ellendan000/app-config.git
+          search-paths: '{application}/{profile}'
+          force-pull: true
+          repos:
+            none_prod:
+              pattern:
+                - '*/dev'
+              uri: https://github.com/ellendan000/app-config.git
+              searchPaths: '{application}/{profile}'
+            prod:
+              pattern:
+                - '*/prod'
+              uri: https://github.com/ellendan000/prod-app-config.git
+              searchPaths: '{application}'
+        health:
+          repositories:
+            none_prod:
+              name: none_prod
+              profiles: dev
+server:
+  port: 7001
+
