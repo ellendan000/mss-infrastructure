@@ -1,13 +1,6 @@
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-ext {
-    name = 'Eureka Server'
-    description = 'Eureka Server demo project'
-    version='0.0.1-SNAPSHOT'
-    sourceEncoding='UTF-8'
-}
-
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
